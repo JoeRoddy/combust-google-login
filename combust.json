@@ -1,0 +1,20 @@
+{
+  "dependencies": {
+    "users": "latest",
+    "social-login": "latest"
+  },
+  "componentsPath": "src/components/users/auth/social",
+  "installedIfExists": [
+    "src/components/users/auth/social/GoogleLoginBtn.jsx",
+    "src/components/users/auth/social/GoogleLoginBtn.js"
+  ],
+  "installation": {
+    "src/components/users/auth/Login.jsx": {
+      "imports": ["import GoogleLoginBtn from \"./social/GoogleLoginBtn\";"],
+      "after": {
+        "pattern": "</Form>",
+        "code": ["\n\t\t\t<GoogleLoginBtn onLogin={this.onLogin} />"]
+      }
+    }
+  }
+}
